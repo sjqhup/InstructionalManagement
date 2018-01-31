@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -45,7 +46,8 @@
         	<div class="form-group">
             	<label class="col-sm-3 control-label">开始时间</label>
                 <div class="col-sm-9">
-                	<input type="text" name="activeStart" readonly="readonly" value="${marketActive.activeStart}"  onclick="WdatePicker()" readonly="readonly" class="form-control input-sm" placeholder="请输入发送时间"/>
+                	<%-- <input type="text" name="activeStart" readonly="readonly" value="${marketActive.activeStart}"  onclick="WdatePicker()" readonly="readonly" class="form-control input-sm" placeholder="请输入发送时间"/> --%>
+                	<input type="text" value="<fmt:formatDate value="${marketActive.activeStart}" type="both" pattern="yyyy-MM-dd"/>"  readonly="readonly" class="form-control input-sm" />
 		        </div>
             </div>
         </div>
@@ -69,7 +71,8 @@
         	<div class="form-group">
             	<label class="col-sm-3 control-label">结束时间</label>
                 <div class="col-sm-9">
-                	<input type="text" name="activeEnd" readonly="readonly" value="${marketActive.activeEnd}" onclick="WdatePicker()" readonly="readonly" class="form-control input-sm" placeholder="请输入发送时间"/>
+                	<%-- <input type="text" name="activeEnd" readonly="readonly" value="${marketActive.activeEnd}" onclick="WdatePicker()" readonly="readonly" class="form-control input-sm" placeholder="请输入发送时间"/> --%>
+                	<input type="text" value="<fmt:formatDate value="${marketActive.activeEnd}" type="both" pattern="yyyy-MM-dd"/>"  readonly="readonly" class="form-control input-sm" />
 		        </div>
             </div>
         </div>

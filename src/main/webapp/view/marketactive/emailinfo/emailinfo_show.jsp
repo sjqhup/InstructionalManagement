@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -35,7 +36,8 @@
         	<div class="form-group">
             	<label class="col-sm-3 control-label">发送时间</label>
                 <div class="col-sm-9">
-                	<p class="form-control-static">${emailInfo.emailTime}</p>
+                	<%-- <p class="form-control-static">${emailInfo.emailTime}</p> --%>
+                	<input type="text" value="<fmt:formatDate value="${emailInfo.emailTime}" type="both" pattern="yyyy-MM-dd"/>"  readonly="readonly" class="form-control input-sm" />
                 </div>
             </div>
         </div>
