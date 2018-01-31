@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.guigu.instructional.student.mapper.CommunicationInfoMapperCustom" >
+
+	
+	<sql id="query_studentinfo_where">
+		 <if test="studentinfo!=null">
+		 	<if test="communicationInfoCustom.studentInfo.student_name!=null and communicationInfoCustom.studentInfo.student_name!=''">
+		 		studentinfo.student_name like '%${communicationInfoCustom.studentInfo.student_name}%'
+		 	</if>
+		 
+		 </if>	
+	
+	</sql>
+	<!--学生名字的查询 -->
+	<select id="findCommunicationList" parameterType="com.guigu.instructional.po.CommunicationInfoCustom" resultType="com.guigu.instructional.po.CommunicationInfo">
+		select communication_info.*,student_info.student_id,student_info.student_name  from communication_info,student_info
+		<where>
+			<include refid="query_studentinfo_where"></include>
+		</where>
+	</select>
+
+</mapper>
