@@ -1,16 +1,22 @@
 package com.guigu.instructional.student.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 
+import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.guigu.instructional.po.DataDictionary;
+import com.guigu.instructional.po.ExportExcelUtils;
 import com.guigu.instructional.po.StaffInfo;
 import com.guigu.instructional.po.StudentInfo;
 import com.guigu.instructional.student.service.StudentInfoService;
@@ -122,4 +128,6 @@ public class StudentInfoController {
 		  }
 		  return this.list(null, model);
 	  }
-}
+	  
+}   
+		   

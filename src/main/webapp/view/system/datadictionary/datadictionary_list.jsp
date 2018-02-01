@@ -25,9 +25,9 @@
     	<input type="text" name="dataType" class="form-control input-sm"/>
     </div>
     <input type="submit"   class="btn btn-danger"     value="查询"/>
-    <a  class="btn btn-success"  href="${pageContext.request.contextPath}/view/system/datadictionary/datadictionary_add.jsp"   >添加</a>
-    <a  class="btn btn-success"  href="${pageContext.request.contextPath}/system/datadictionary/downloadsql.action"   >下载sql语句</a>
-    <a  class="btn btn-success"  href="${pageContext.request.contextPath}/system/datadictionary/downloadsql2.action"   >下载pdm文件</a>
+    <a  class="btn btn-success"  href="${pageContext.request.contextPath}/view/system/datadictionary/datadictionary_add.jsp">添加</a></br>
+    <a  class="btn btn-success"  href="${pageContext.request.contextPath}/system/datadictionary/downloadsql.action">下载sql语句</a>
+    <a  class="btn btn-success"  href="${pageContext.request.contextPath}/system/datadictionary/downloadsql2.action">下载pdm文件</a>
     <a  class="btn btn-success"  href="${pageContext.request.contextPath}/view/system/datadictionary/show.jsp">展示pdm图片</a>
     <a  class="btn btn-success"  href="${pageContext.request.contextPath}/view/system/datadictionary/upload.jsp">添加文件</a>
     <a  class="btn btn-success"  href="${pageContext.request.contextPath}/system/datadictionary/export.action">信息导出</a>

@@ -6,6 +6,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <img alt="" src="${pageContext.request.contextPath}/upload/Diagram.png" >
+  <img alt="" src="${pageContext.request.contextPath}/download/Diagram.png" width="100%" height="100%" >
 </body>
 </html>

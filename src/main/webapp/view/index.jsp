@@ -131,9 +131,9 @@
 							</a></li>
 						   <li><a href="${pageContext.request.contextPath}/system/roleinfo/staffinforolelist.action" target="mainframe"> <i
 									class="icon-double-angle-right"></i> 角色变更	</a></li>
-                          <li><a href="view/system/anthorty/anthorty_list.html" target="mainframe"> <i
+                          <li><a href="${pageContext.request.contextPath}/view/system/anthorty/anthorty_change.jsp" target="mainframe"> <i
 									class="icon-double-angle-right"></i> 权限管理	</a></li> 
-                         <li><a href="view/system/anthotychange/anthorty_changelist.html" target="mainframe"> <i
+                         <li><a href="${pageContext.request.contextPath}/view/system/anthotychange/anthorty_changelist.jsp" target="mainframe"> <i
 									class="icon-double-angle-right"></i> 权限变更</a></li>  
    						 <li><a href="${pageContext.request.contextPath}/system/datadictionary/list.action" target="mainframe"> <i
 									class="icon-double-angle-right"></i> 数据字典</a></li>                                                    
