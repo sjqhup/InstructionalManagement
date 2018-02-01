@@ -1,15 +1,15 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>首页</title>
-<!-- 新 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet" href="../../../css/bootstrap.min.css">
-<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-<script src="../../../js/jquery.min.js"></script>
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="../../../js/bootstrap.min.js"></script>
+
+<%@ include file="/view/public/common.jspf" %>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
     </ul>
 </div>
 
-<form action="" class="form-horizontal">
+<form action="${pageContext.request.contextPath }/system/datadictionary/add.action" class="form-horizontal">
 
     <h5 class="page-header alert-info" style="padding:10px; margin:0px; margin-bottom:5px;">基本信息</h5>
 	<div class="row">
@@ -29,7 +29,7 @@
         	<div class="form-group">
             	<label class="col-sm-3 control-label">编号</label>
                 <div class="col-sm-9">
-                	<input type="text" name="" class="form-control input-sm" placeholder="请输入编号"/>
+                	<input type="text" name="dataId" class="form-control input-sm" readonly="readonly" placeholder="请输入编号"/>
                 </div>
             </div>
         
@@ -38,7 +38,7 @@
             <div class="form-group">
             	<label class="col-sm-3 control-label">名称</label>
                 <div class="col-sm-9">
-                	<input type="text" name="" class="form-control input-sm" placeholder="请输入名称"/>
+                	<input type="text" name="dataContent" class="form-control input-sm" placeholder="请输入名称"/>
                 </div>
             </div>
         </div>
@@ -49,7 +49,7 @@
         	<div class="form-group">
             	<label class="col-sm-3 control-label">类型</label>
                 <div class="col-sm-9">
-                	<input type="text" name="" class="form-control input-sm" placeholder="请输入类型"/>
+                	<input type="text" name="dataType" class="form-control input-sm" placeholder="请输入类型"/>
                 </div>
             </div>
         
@@ -63,7 +63,7 @@
         	<div class="form-group">
             	<label class="col-sm-3 control-label">描述</label>
                 <div class="col-sm-9">
-                	<textarea class="form-control"></textarea>
+                	<textarea class="form-control" name="dataDesc"></textarea>
                 </div>
             </div>
         

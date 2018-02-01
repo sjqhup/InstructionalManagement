@@ -7,54 +7,64 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+
+
+
 
 public class StaffInfo {
     private Integer staffId;
 
     private Integer roleId;
-
-    @NotEmpty(message="{staffInfo.staffName.isNULL}")
+    
+    @NotEmpty(message="{items.staffName.notnull}")
     private String staffName;
 
     private String staffSex;
-
-//    @Size(min=1,max=120,message="{staffInfo.staffAge.LENGTH}")
-    @Max(value=120,message="{staffInfo.staffAge.LENGTH}")
+    
+    @Min(value=20,message="{items.staffAge.min.error}")
+    @Max(value=60,message="{items.staffAge.max.error}")
     private Integer staffAge;
-
-    @NotEmpty(message="{staffInfo.staffNativePlace.isNULL}")
+    
+    @NotEmpty(message="{items.staffNativePlace.notnull}")
     private String staffNativePlace;
-
-    @NotEmpty(message="{staffInfo.staffIdcard.isNULL}")
+    
+    @Size(min=18,max=18,message="{items.staffIdcard.error}")
     private String staffIdcard;
-
-    @Past(message="{staffInfo.staffBirthday.isNULL}")
+    
+    @Past(message="{items.staffBirthday.past}")
     private Date staffBirthday;
 
+    @Size(min=11,max=12,message="{items.staffOfficePhone.error}")
     private String staffOfficePhone;
-
+    
+    @Size(min=11,max=11,message="{items.staffMobilePhone.error}")
     private String staffMobilePhone;
 
-    @Email(message="{staffInfo.staffEmail.isNULL}")
+    @Email(message="{items.staffEmail.error}")
     private String staffEmail;
-
+    
+    @NotEmpty(message="{items.staffAddr.notnull}")
     private String staffAddr;
-
-//    @Size(min=4,max=12,message="{staffInfo.staffQq.LENGTH}")
-    @Min(value=4,message="{staffInfo.staffQq.LENGTH}")
+    
+    @Size(min=5,max=10,message="{items.staffQq.error}")
     private String staffQq;
-
+    
+    @Past(message="{items.staffEntryTime.past}")
     private Date staffEntryTime;
 
     private String staffEducationLevel;
-
+    
+    @NotEmpty(message="{items.staffRemark.notEmpty}")
     private String staffRemark;
 
     private String staffState;
-
+    
+    @Size(min=6,max=12,message="{items.staffNumber.error}")
     private String staffNumber;
 
+    @Size(min=6,max=12,message="{items.staffPassword.error}")
     private String staffPassword;
 
     public Integer getStaffId() {

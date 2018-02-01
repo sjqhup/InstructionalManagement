@@ -11,8 +11,8 @@
 </head>
 
 <body>
-
-<c:if test="${allErrors!=null }">
+<!-- 显示错误信息 -->
+		<c:if test="${allErrors!=null }">
 			 <c:forEach items="${allErrors}" var="error">
 			 	${error.defaultMessage }<br/>
 			 </c:forEach>
@@ -20,19 +20,19 @@
 <div style="padding:0px; margin:0px;">
  <ul class="breadcrumb" style="  margin:0px; " >
     	<li><a href="#">系统管理</a></li>
-        <li>员工管理</li>
-        <li>修改员工</li>
+        <li>教师管理</li>
+        <li>修改教师</li>
     </ul>
 </div>
 
-<form action="${pageContext.request.contextPath }/system/staffinfo/update.action" class="form-horizontal">
+<form action="${pageContext.request.contextPath }/classinfo/teacher/update.action" class="form-horizontal">
    	<div class="row">
     	<div class="col-sm-3 col-sm-offset-4">
         	<input  type="submit" class="btn btn-success" value="保存"/>
-            <a href="${pageContext.request.contextPath }/system/staffinfo/list.action" class="btn btn-success">返回上一级</a>
+            <a href="${pageContext.request.contextPath }/classinfo/teacher/list.action" class="btn btn-success">返回上一级</a>
         </div>
     </div>
-     <h5 class="page-header alert-info" style="padding:10px; margin:0px; margin-bottom:5px;">基本信息</h5>
+    <h5 class="page-header alert-info" style="padding:10px; margin:0px; margin-bottom:5px;">基本信息</h5>
 	<div class="row">
     	<div class="col-sm-5">
         	<div class="form-group">
@@ -43,8 +43,6 @@
             </div>
         
         </div>
-        
-        
         <div class="col-sm-5">
             <div class="form-group">
             	<label class="col-sm-3 control-label">姓名</label>
@@ -226,7 +224,7 @@
    	<div class="row">
     	<div class="col-sm-3 col-sm-offset-4">
         	<input  type="submit" class="btn btn-success" value="保存"/>
-           	 <a href="${pageContext.request.contextPath }/system/staffinfo/list.action" class="btn btn-success">返回上一级</a>
+            <a href="${pageContext.request.contextPath }/classinfo/teacher/list.action" class="btn btn-success">返回上一级</a>
         </div>
     </div>
 </form>

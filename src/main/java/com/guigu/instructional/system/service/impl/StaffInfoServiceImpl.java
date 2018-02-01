@@ -83,8 +83,6 @@ public class StaffInfoServiceImpl implements StaffInfoService {
             //查询所有正常的员工的数据
 //            staffInfo.setStaffState("1");
             
-        }else {
-        	return staffInfoMapper.selectByExample(null);
         }
         criteria.andStaffStateEqualTo("1");
        

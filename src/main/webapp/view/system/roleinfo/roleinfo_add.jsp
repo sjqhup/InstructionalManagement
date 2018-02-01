@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 <%@ taglib  uri="http://displaytag.sf.net" prefix="display" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,6 +13,13 @@
 </head>
 
 <body>
+
+<c:if test="${allErrors!=null }">
+			 <c:forEach items="${allErrors}" var="error">
+			 	${error.defaultMessage }<br/>
+			 </c:forEach>
+		</c:if>
+		
 <div style="padding:0px; margin:0px;">
  <ul class="breadcrumb" style="  margin:0px; " >
     	<li><a href="#">系统管理</a></li>
@@ -28,7 +36,7 @@
         	<div class="form-group">
             	<label class="col-sm-3 control-label">角色编号</label>
                 <div class="col-sm-9">
-                	<input type="text" name="roleId"  readonly="readonly" class="form-control input-sm" placeholder="请输入角色编号"/>
+                	<input type="text" name="roleId" value="${roleInfo.roleId}" readonly="readonly" class="form-control input-sm" placeholder="请输入角色编号"/>
                 </div>
             </div>
         
@@ -37,7 +45,7 @@
             <div class="form-group">
             	<label class="col-sm-3 control-label">角色名称</label>
                 <div class="col-sm-9">
-                	<input type="text" name="roleName" class="form-control input-sm" placeholder="请输入角色名称"/>
+                	<input type="text" name="roleName" value="${roleInfo.roleName}" class="form-control input-sm" placeholder="请输入角色名称"/>
                 </div>
             </div>
         </div>
@@ -49,7 +57,7 @@
         	<div class="form-group">
             	<label class="col-sm-3 control-label">备注</label>
                 <div class="col-sm-9">
-                	<textarea class="form-control" name="roleDesc"></textarea>
+                	<textarea class="form-control" name="roleDesc">${roleInfo.roleDesc}</textarea>
                 </div>
             </div>
         
@@ -60,7 +68,7 @@
    	<div class="row">
     	<div class="col-sm-3 col-sm-offset-4">
         	<input  type="submit" class="btn btn-success" value="保存"/>
-            <a href="${pageContext.request.contextPath }/system/roleinfo/list.action">返回上一级</a>
+            <a   class="btn btn-success" href="${pageContext.request.contextPath }/system/roleinfo/list.action">返回上一级</a>
         </div>
     </div>
 </form>

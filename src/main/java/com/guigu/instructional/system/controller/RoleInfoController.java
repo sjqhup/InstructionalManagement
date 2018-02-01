@@ -94,7 +94,19 @@ public class RoleInfoController {
     }
     
     @RequestMapping("update.action")
-    public String update(RoleInfo roleInfo,Model model) {
+    public String update(@Validated RoleInfo roleInfo,BindingResult bindingResult,Model model) {
+    	 if(bindingResult.hasErrors()) {
+               //输出错误信息
+               List<ObjectError> allErrors=bindingResult.getAllErrors();
+               //将错误信息传递到页面
+               model.addAttribute("allErrors", allErrors);
+               
+               //通过model对象再次传递数据
+               model.addAttribute("roleInfo", roleInfo);
+               
+               //转发到商品修改页面
+               return "system/roleinfo/roleinfo_update";
+           }
         boolean result=roleInfoService.updateRole(roleInfo);
         if(result) {
             model.addAttribute("info", "修改成功");
