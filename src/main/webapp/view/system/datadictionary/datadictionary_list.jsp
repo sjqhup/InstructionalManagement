@@ -30,6 +30,7 @@
     <a  class="btn btn-success"  href="${pageContext.request.contextPath}/system/datadictionary/downloadsql2.action"   >下载pdm文件</a>
     <a  class="btn btn-success"  href="${pageContext.request.contextPath}/view/system/datadictionary/show.jsp">展示pdm图片</a>
     <a  class="btn btn-success"  href="${pageContext.request.contextPath}/view/system/datadictionary/upload.jsp">添加文件</a>
+    <a  class="btn btn-success"  href="${pageContext.request.contextPath}/system/datadictionary/export.action">信息导出</a>
     </form>
 </div>
 

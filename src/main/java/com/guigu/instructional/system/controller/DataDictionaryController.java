@@ -5,6 +5,7 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -21,8 +22,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.guigu.instructional.po.DataDictionary;
+import com.guigu.instructional.po.ExportExcelUtils;
 import com.guigu.instructional.system.service.DataDictionaryService;
 import com.mysql.jdbc.Field;
 
@@ -159,6 +162,38 @@ public class DataDictionaryController {
 	        }
 
 	     }
+	  
+	  @RequestMapping("export.action")
+	  public ModelAndView exportExcel(HttpServletRequest request,HttpServletResponse response){  
+	        try {  
+	            DataDictionary dataDictionary=new DataDictionary();  
+	            // 查出用户数据  
+	            List<DataDictionary> datalist = dataDictionaryService.findDataDictionaryList(null);  
+	            String title ="数据模板表";  
+	            String[] rowsName=new String[]{"序号","ID","类型","描述","内容"};  
+	            List<Object[]>  dataList = new ArrayList<Object[]>();  
+	            Object[] objs = null;  
+	            for (int i = 0; i < datalist.size(); i++) {  
+	                DataDictionary data =datalist.get(i);  
+	                objs = new Object[rowsName.length];  
+	                objs[0] = i;  
+	                objs[1] = data.getDataId();
+	                objs[2] = data.getDataType();
+	                objs[3] = data.getDataDesc();
+	                objs[4] = data.getDataContent();
+	                dataList.add(objs);  
+	            }  
+	            //   
+	            ExportExcelUtils ex =new ExportExcelUtils(title, rowsName, dataList,response);  
+	            ex.exportData();  
+	              
+	              
+	        } catch (Exception e) {  
+	            e.printStackTrace();  
+	        }  
+	          
+	        return null;  
+	    }   
 		   
 }
 	
