@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.guigu.instructional.edumanage.service.AttendanceInfoService;
 import com.guigu.instructional.po.AttendanceInfo;
 import com.guigu.instructional.po.RoleInfo;
+import com.guigu.instructional.po.StudentInfo;
+import com.guigu.instructional.student.service.StudentInfoService;
 
 
 @Controller
@@ -20,8 +22,8 @@ public class AttendanceInfoController {
 	  @Resource(name="attendanceInfoServiceImpl")
 	  private AttendanceInfoService attendanceInfoService;
 	
-	 /* @Resource(name="studentInfoServiceImpl")
-	  private StudentInfoService studentInfoService;*/
+	  @Resource(name="studentInfoServiceImpl")
+	  private StudentInfoService studentInfoService;
 	  
 	    @RequestMapping("list.action")
 	    public String list(AttendanceInfo attendanceInfo,Model model) {   	
@@ -35,9 +37,9 @@ public class AttendanceInfoController {
 	    @RequestMapping("loadadd.action")
 	    public String loadadd(AttendanceInfo attendanceInfo,Model model) {
 	    	
-	    /*	List<Student> studentList = studentInfoService.getStudentInfoList(null);*/
+	  	List<StudentInfo> studentList = studentInfoService.getStudentInfoList(null);
 	    	
-	    //	model.addAttribute("studentList", studentList);
+	 	model.addAttribute("studentList", studentList);
 	    	
 	        return "edumanage/attendance/attendance_add";
 	    }

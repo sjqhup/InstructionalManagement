@@ -11,14 +11,16 @@ import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.guigu.instructional.classinfo.service.TeacherService;
+import com.guigu.instructional.classinfo.service.impl.TeacherServiceImpl;
 import com.guigu.instructional.po.StaffInfo;
 import com.guigu.instructional.system.service.StaffInfoService;
 
 @Controller
 @RequestMapping("/classinfo/teacher/")
 public class TeacherController {
-	@Resource(name = "staffInfoServiceImpl")
-    private StaffInfoService staffInfoService;
+	@Resource(name = "teacherServiceImpl")
+    private TeacherService teacherService;
 
 	@RequestMapping("add.action")
     public String addStaffInfo(@Validated StaffInfo staffInfo,BindingResult bindingResult,Model model) {
@@ -29,8 +31,9 @@ public class TeacherController {
 	           model.addAttribute("allErrors", allErrors);
 	           return "classinfo/teacher/teacher_add";
 	       }
+	   staffInfo.setRoleId(1);
        staffInfo.setStaffState("1");
-       boolean result= staffInfoService.addStaff(staffInfo);
+       boolean result= teacherService.addStaff(staffInfo);
        if(result) {
            model.addAttribute("info","添加成功");
        }else {
@@ -41,7 +44,7 @@ public class TeacherController {
 	
 	 @RequestMapping("list.action")
 	    public String list(StaffInfo staffInfo,Model model) {
-	        List<StaffInfo> list =staffInfoService.getStaffInfoList(staffInfo);
+	        List<StaffInfo> list =teacherService.getStaffInfoList(staffInfo);
 	        model.addAttribute("list", list);
 	        
 	        return "classinfo/teacher/teacher_list";
@@ -49,7 +52,7 @@ public class TeacherController {
 	 
 	 @RequestMapping("show.action")
 	    public String showStaffInfo(Integer staffId,Model model) {
-	        StaffInfo staffInfo =staffInfoService.getStaffInfo(staffId);
+	        StaffInfo staffInfo =teacherService.getStaffInfo(staffId);
 	        model.addAttribute("staffInfo", staffInfo);
 	        return "classinfo/teacher/teacher_show";
 	        
@@ -57,7 +60,7 @@ public class TeacherController {
 	 
 	 @RequestMapping("load.action")
 	    public String loadUpate(Integer staffId,Model model) {
-	        StaffInfo staffInfo =staffInfoService.getStaffInfo(staffId);
+	        StaffInfo staffInfo =teacherService.getStaffInfo(staffId);
 	        model.addAttribute("staffInfo", staffInfo);
 	        return "classinfo/teacher/teacher_update";
 	    }
@@ -71,7 +74,7 @@ public class TeacherController {
 	            model.addAttribute("allErrors", allErrors);
 	            return "classinfo/teacher/teacher_update";
 	        }
-	        boolean result=staffInfoService.updateStaff(staffInfo);
+	        boolean result=teacherService.updateStaff(staffInfo);
 	        if(result) {
 	            model.addAttribute("info", "修改成功");
 	        }else {
@@ -87,7 +90,7 @@ public class TeacherController {
 	        //设置员工为 0   代表无效
 	        staffInfo.setStaffState("0");
 	        
-	        boolean result =staffInfoService.updateStaff(staffInfo);
+	        boolean result =teacherService.updateStaff(staffInfo);
 	        if(result) {
 	            model.addAttribute("info", "删除成功");
 	        }else {

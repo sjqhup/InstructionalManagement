@@ -32,7 +32,7 @@
         	<div class="form-group">
             	<label class="col-sm-3 control-label">事务编号</label>
                 <div class="col-sm-9">
-                	<input type="text" name="classTransactionId" readonly="readonly" class="form-control input-sm" placeholder="请输入编号"/>
+                	<input type="text" name="classTransactionId"  value="${classTransactionInfo.classTransactionId}"}readonly="readonly" class="form-control input-sm" placeholder="请输入编号"/>
                 </div>
             </div>
           </div>
@@ -42,9 +42,9 @@
             	<label class="col-sm-3 control-label">班级编号</label>
                 <div class="col-sm-9">
                 	<select class="form-control input-sm" name="classId" >
-                		<%-- <c:forEach items="${classList}" var="classList">
+                		<c:forEach items="${classList}" var="classList">
                             	<option value="${classList.classId}"}>${classList.classId}</option>
-                        </c:forEach> --%>
+                        </c:forEach> 
                     </select>
                 </div>
             </div>
@@ -56,7 +56,7 @@
             <div class="form-group">
             	<label class="col-sm-3 control-label">主题</label>
                 <div class="col-sm-9">
-                	<input type="text" name="classTransactionTile" class="form-control input-sm" placeholder="请输入主题"/>
+                	<input type="text" name="classTransactionTile" value="${classTransactionInfo.classTransactionTile}"} class="form-control input-sm" placeholder="请输入主题"/>
                 </div>
             </div>
         </div>
@@ -65,7 +65,7 @@
         	<div class="form-group">
             	<label class="col-sm-3 control-label">内容</label>
                 <div class="col-sm-5">
-                	<input type="text" name="classTransactionContent" class="form-control input-sm" placeholder="请输入内容"/>
+                	<input type="text" name="classTransactionContent" value="${classTransactionInfo.classTransactionContent}"} class="form-control input-sm" placeholder="请输入内容"/>
                 </div>
             </div>
         
@@ -78,7 +78,7 @@
             <div class="form-group">
             	<label class="col-sm-3 control-label">组织人</label>
                 <div class="col-sm-4">
-                		<input type="text" name="classTransactionPerson" class="form-control input-sm" placeholder="请输入组织人"/>
+                		<input type="text" name="classTransactionPerson" value="${classTransactionInfo.classTransactionPerson}"} class="form-control input-sm" placeholder="请输入组织人"/>
                 </div>
             </div>
         </div>
@@ -88,7 +88,7 @@
         	<div class="form-group">
             	<label class="col-sm-3 control-label">活动日期</label>
                 <div class="col-sm-9">
-                	<input type="text" name="classTransactionTime" onclick="WdatePicker()" readonly="readonly" class="form-control input-sm" placeholder="请输入活动日期"/>
+                	<input type="text" name="classTransactionTime"  value="${classTransactionInfo.classTransactionTime}"} onclick="WdatePicker()" readonly="readonly" class="form-control input-sm" placeholder="请输入活动日期"/>
                 </div>
             </div>
         
@@ -101,7 +101,7 @@
         	<div class="form-group">
             	<label class="col-sm-3 control-label">备注</label>
                 <div class="col-sm-9">
-                	<textarea class="form-control" name=" classTransactionRemar"></textarea>
+                	<textarea class="form-control"  name="classTransactionRemar">${classTransactionInfo.classTransactionRemar}</textarea>
                 </div>
             </div>
         

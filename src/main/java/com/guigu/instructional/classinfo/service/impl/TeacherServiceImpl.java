@@ -67,6 +67,7 @@ public class TeacherServiceImpl implements TeacherService{
 	                criteria.andStaffMobilePhoneEqualTo(staffInfo.getStaffMobilePhone());
 	            }
 	        }
+	        criteria.andRoleIdEqualTo(1);
 	        criteria.andStaffStateEqualTo("1");
 	        
 	        

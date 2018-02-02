@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>首页</title>
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<%@ include file="/view/public/common.jspf" %>
 </head>
 
 <body>
@@ -19,6 +19,7 @@
     </ul>
 </div>
 <div class="row alert alert-info"  style="margin:0px; padding:3px;" >
+
 <form class="form-horizontal">
 	<div class="col-sm-2">角色名称:</div>
     <div class="col-sm-3">

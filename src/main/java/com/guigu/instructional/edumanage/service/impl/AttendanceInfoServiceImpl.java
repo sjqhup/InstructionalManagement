@@ -57,23 +57,7 @@ public class AttendanceInfoServiceImpl implements AttendanceInfoService{
         
         Criteria criteria =attendanceInfoExample.createCriteria();
         if(attendanceInfo!=null) {
-           /* //根据id查询
-            if(staffInfo.getStaffId()!=null) {
-                criteria.andStaffIdEqualTo(staffInfo.getStaffId());
-            }
-            //根据name查询
-            if(staffInfo.getStaffName()!=null) {
-                staffInfo.setStaffName("%"+staffInfo.getStaffName()+"%");
-                criteria.andStaffNameLike(staffInfo.getStaffName());
-            }
-            //根据电话号码查询
-            if(staffInfo.getStaffMobilePhone()!=null) {
-                criteria.andStaffMobilePhoneEqualTo(staffInfo.getStaffMobilePhone());
-            }
-            //1代表正常  0代表删除
-            //查询所有正常的员工的数据
-//            staffInfo.setStaffState("1");
-            */
+   
         }
         criteria.andAttendanceStateEqualTo("1");
        

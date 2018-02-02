@@ -19,13 +19,12 @@
 <form action="${pageContext.request.contextPath }/edumanage/attendance.action" class="form-horizontal">
 
 <h5 class="page-header alert-info" style="padding:10px; margin:0px; margin-bottom:5px;">基本信息</h5>
-
 			<div class="row">
     			<div class="col-sm-5">
         			<div class="form-group">
             			<label class="col-sm-3 control-label">考勤表编号</label>
                 		<div class="col-sm-9">
-                			<input type="text" name="attendanceId"  readonly="readonly" class="form-control input-sm" placeholder="请输入考勤表编号"/>
+                			<input type="text" name="attendanceId"  value="${attendanceInfo.attendanceId}" readonly="readonly" class="form-control input-sm" placeholder="请输入考勤表编号"/>
                 		</div>
            		 </div>
         
@@ -35,9 +34,9 @@
             		<label class="col-sm-3 control-label">学生编号</label>
                 	<div class="col-sm-9">
                 	<select class="form-control input-sm" name="studentId" >
-                		<%-- <c:forEach items="${studentList}" var="studentList">
+                		 <c:forEach items="${studentList}" var="studentList">
                             	<option value="${studentList.studentId}"}>${studentList.studentId}</option>
-                        </c:forEach> --%>
+                        </c:forEach>
                     </select>
                 		
                 	</div>
@@ -51,17 +50,22 @@
         			<div class="form-group">
             			<label class="col-sm-3 control-label">考勤表时间</label>
                 		<div class="col-sm-9">
-                			<input type="text" name="attendanceTime" onclick="WdatePicker()" readonly="readonly"  class="form-control input-sm" placeholder="请选择考勤表时间"/>
+                			<input type="text" name="attendanceTime" onclick="WdatePicker()" readonly="readonly"  value="${attendanceInfo.attendanceTime}" class="form-control input-sm" placeholder="请选择考勤表时间"/>
                 		</div>
            		 </div>
         
        		 </div>
+       		 
        		 <div class="col-sm-5">
-    
+            	<div class="form-group">
+            		<label class="col-sm-3 control-label">状态</label>
+                	<div class="col-sm-9">
+                	<input type="text" name="attendanceState"  value="${attendanceInfo.attendanceState}" class="form-control input-sm" placeholder="请输入"/>
+                	
+                		
+                	</div>
+            	</div>
        		 </div>
-
-    		</div>
-    		
     		
     
     
@@ -70,7 +74,7 @@
         			<div class="form-group">
             			<label class="col-sm-2 control-label">考勤内容描述</label>
                 		<div class="col-sm-9">
-                			<textarea class="form-control" name="attendanceDesc"></textarea>
+                			<textarea class="form-control" value="${attendanceInfo.attendanceDesc}" name="attendanceDesc"></textarea>
                 		</div>
        		 		</div>
        		 	</div>
@@ -79,14 +83,14 @@
             	<div class="form-group">
             		<label class="col-sm-2 control-label">考勤注释</label>
                 	<div class="col-sm-9">
-                		<textarea class="form-control" name="attendanceRemark"></textarea>
+                		<textarea class="form-control" value="${attendanceInfo.attendanceRemark}" name="attendanceRemark"></textarea>
                 	</div>
             	</div>
        		 </div>
        		 <div class="row">
     	<div class="col-sm-3 col-sm-offset-4">
         	<input  type="submit" class="btn btn-success" value="修改"/>
-            <a class="btn btn-success" href="${pageContext.request.contextPath }/edumanage/attendance/list.action">返回上一级</a>
+            <a href="${pageContext.request.contextPath }/edumanage/attendance/list.action">返回上一级</a>
         </div>
     </div>
 </form>
