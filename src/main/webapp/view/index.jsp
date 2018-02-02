@@ -131,7 +131,7 @@
 							</a></li>
 						   <li><a href="${pageContext.request.contextPath}/system/roleinfo/staffinforolelist.action" target="mainframe"> <i
 									class="icon-double-angle-right"></i> 角色变更	</a></li>
-                          <li><a href="${pageContext.request.contextPath}/view/system/anthorty/anthorty_change.jsp" target="mainframe"> <i
+                          <li><a href="${pageContext.request.contextPath}/view/system/anthorty/anthorty_list.jsp" target="mainframe"> <i
 									class="icon-double-angle-right"></i> 权限管理	</a></li> 
                          <li><a href="${pageContext.request.contextPath}/view/system/anthotychange/anthorty_changelist.jsp" target="mainframe"> <i
 									class="icon-double-angle-right"></i> 权限变更</a></li>  
@@ -227,16 +227,16 @@
 						</ul>
 				</li>
                 
-                   <li><a href="javascript:void(0)" target="mainframe"
+                  <li><a href="javascript:void(0)" target="mainframe"
 						class="dropdown-toggle"> <i class="icon-desktop"></i> <span
 							class="menu-text"> 教务管理 </span> <b class="arrow icon-angle-down"></b>
 					</a>
 
 						<ul class="submenu">
-                            <li><a href="view/student/student/student_list.html" target="mainframe"> <i
+                            <li><a href="${pageContext.request.contextPath}/edumanage/transaction/list.action" target="mainframe"> <i
 									class="icon-double-angle-right"></i> 班级事务
 							</a></li>
-                            <li><a href="view/student/evaluationinfo/evaluationinfo_list.html" target="mainframe"> <i
+                            <li><a href="${pageContext.request.contextPath}/edumanage/attendance/list.action" target="mainframe"> <i
 									class="icon-double-angle-right"></i> 学员考勤
 							</a></li>
                                                                                                                                          
@@ -249,10 +249,10 @@
 					</a>
 
 						<ul class="submenu">
-                            <li><a href="view/student/student/student_list.html" target="mainframe"> <i
+                            <li><a href="${pageContext.request.contextPath}/finance/tuition/list.action" target="mainframe"> <i
 									class="icon-double-angle-right"></i> 学员缴费
 							</a></li>
-                            <li><a href="view/student/evaluationinfo/evaluationinfo_list.html" target="mainframe"> <i
+                            <li><a href="${pageContext.request.contextPath}/finance/salary/list.action" target="mainframe"> <i
 									class="icon-double-angle-right"></i> 员工薪水
 							</a></li>
                                                                                                                                          

@@ -1,35 +1,24 @@
-<!doctype html>
-<html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>首页</title>
-<!-- 新 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet" href="../../../css/bootstrap.min.css">
-<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-<script src="../../../js/jquery.min.js"></script>
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="../../../js/bootstrap.min.js"></script>
+<%@ include file="/view/public/common.jspf" %>
 </head>
 
 <body>
 
 <form action="" class="form-horizontal">
- 	<div class="row">
-    	<div class="col-xs-9 ">
-          <input type="button"   class="btn btn-success"   value="添加权限信息" onClick="javascript:window.location='anthorty_add.html'"/>
-         	 <input  type="submit" class="btn btn-info" value="修改权限信息"/>
-        	<input  type="submit" class="btn btn-danger" value="删除权限信息"/>
-          
-        </div>
-    </div>
+
     <h5 class="page-header alert-info" style="padding:10px; margin:0px; margin-bottom:5px;">基本信息</h5>
 	<div class="row">
     	<div class="col-xs-5">
         	<div class="form-group">
             	<label class="col-xs-3 control-label">权限编号</label>
                 <div class="col-xs-9">
-                	<p class="form-control-static">1001</p>
+                	<input type="text" name="" class="form-control input-sm" placeholder="请输入权限编号"/>
                 </div>
             </div>
         
@@ -38,7 +27,7 @@
             <div class="form-group">
             	<label class="col-xs-3 control-label">权限名称</label>
                 <div class="col-xs-9">
-                		<p class="form-control-static">程序员</p>
+                	<input type="text" name="" class="form-control input-sm" placeholder="请输入权限名称"/>
                 </div>
             </div>
         </div>
@@ -48,7 +37,10 @@
         	<div class="form-group">
             	<label class="col-xs-3 control-label">上级权限</label>
                 <div class="col-xs-9">
-                	<p class="form-control-static">系统管理</p>
+                	<select class="form-control input-sm">
+                    	<option value="根目录">根目录</option>
+                        <option value="系统管理">系统管理</option>
+                    </select>
                 </div>
             </div>
         
@@ -57,7 +49,7 @@
             <div class="form-group">
             	<label class="col-xs-3 control-label">权限URL</label>
                 <div class="col-xs-9">
-                	<p class="form-control-static">system/list.do</p>
+                	<input type="text" name="" class="form-control input-sm" placeholder="请输入权限URL"/>
                 </div>
             </div>
         </div>
@@ -68,14 +60,18 @@
         	<div class="form-group">
             	<label class="col-xs-3 control-label">备注</label>
                 <div class="col-xs-9">
-                	<p class="form-control-static">查询用户信息</p>
+                	<textarea class="form-control"></textarea>
                 </div>
             </div>
         
         </div>
 
     </div>
-
+ 	<div class="row">
+    	<div class="col-xs-3 col-xs-offset-3">
+        	<input  type="submit" class="btn btn-success" value="保存权限信息"/>
+        </div>
+    </div>
 
 </form>
 
